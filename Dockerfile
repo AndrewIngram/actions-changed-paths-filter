@@ -1,4 +1,4 @@
-FROM debian:stable-slim
+FROM alpine:3.9
 
 LABEL "repository"="https://github.com/AndrewIngram/actions-changed-directory-filter"
 LABEL "homepage"="https://github.com/AndrewIngram/actions-changed-directory-filter"
@@ -9,11 +9,7 @@ LABEL "com.github.actions.description"="Filter based on changes against the base
 LABEL "com.github.actions.icon"="filter"
 LABEL "com.github.actions.color"="gray-dark"
 
-RUN apt-get update && \
-    apt-get install --no-install-recommends -y \
-        git-all && \
-	apt-get clean -y && \
-    rm -rf /var/lib/apt/lists/*
-
+RUN apk add --no-cache bash git
 ADD entrypoint.sh /entrypoint.sh
+
 ENTRYPOINT ["/entrypoint.sh"]
