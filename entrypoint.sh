@@ -1,4 +1,4 @@
-#!/bin/sh -l
+#!/bin/bash
 
 if [ -z ${BASE_BRANCH+x} ]; then
   echo "- BASE_BRANCH environment variable not set, using \"master\""
