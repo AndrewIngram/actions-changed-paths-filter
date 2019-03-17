@@ -21,3 +21,5 @@ action "Build documentation" {
   args = "docs"
 }
 ```
+
+If you want to check changes against a branch other than master, provide a `BASE_BRANCH` environment variable.
